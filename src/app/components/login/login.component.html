@@ -1,0 +1,44 @@
+<div class="outer">
+    <div class="container">
+         <div class=row>
+            <div class="offset-m2 col-lg-5 col-md-7 offset-lg-4 offert-md-3">
+                <div class="panel border bg-white">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold">Login</h3>
+                    </div>
+                    <div class="panel-body p-3">
+                        <form [formGroup]="loginForm">
+                            <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="loginForm.controls['pessoaUsuario'].dirty && loginForm.hasError ('required','pessoaUsuario')">
+                                     <span class="fa fa-user p-2"></span>
+                                  <input formControlName="pessoaUsuario" type="text" placeholder="Usuário">
+                                </div>
+                             </div>
+                             <small *ngIf="loginForm.controls['pessoaUsuario'].dirty && loginForm.hasError ('required','pessoaUsuario')" class="text-danger">*Digite seu usuário</small>
+                             <div class="form-group pt-3">
+                                <div class="input-field" [class.error]="loginForm.controls['pessoaSenha'].dirty && loginForm.hasError ('required','pessoaSenha')">
+                                     <span class="fa fa-lock p-2"></span>
+                                  <input formControlName="pessoaSenha" [type]="type" placeholder="Senha">
+                                  <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                                </div>
+                             </div>
+                             <small *ngIf="loginForm.controls['pessoaSenha'].dirty && loginForm.hasError ('required','pessoaSenha')" class="text-danger"> *Digite sua senha</small>
+                             <div class="form-inline fr mt-4">
+                                <a id="forget" class="font-weight-bold"> Esqueci minha senha</a>
+                             </div>
+                             <button (click)="onLogin()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Entrar</button>
+                            <div class="text-center pt-4 text-muted">Faça seu <a id= "forget" routerLink="/signup">Cadastro</a></div>
+                        </form>
+                    </div>
+                    <br>
+                        <div class="mx-3 my-2 py-2 bordert">
+                             <div class="text-center py-3">
+                             <a href="www.facebook.com" target="_blank" class="px-3"> <i class="fa-brands fa-facebook"></i></a>
+                             <a href="www.google.com" target="_blank" class="px-3"> <i class="fa-brands fa-google"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
